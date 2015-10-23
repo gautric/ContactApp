@@ -2,19 +2,19 @@
 Hibernate search, JPA, Hibernate ORM, JTA, JBossForge
 
 
-# Setup 
+## Setup 
 
 `mvn clean package`
 
-# Deploy
+## Deploy
 
 You can deploy the application on WLFY 10CR2 
 
-# Inject Data 
+## Inject Data 
 
 `sh data/contact_inject.sh`
 
-# Hibernate search engine
+## Hibernate search engine
 
 Open http://localhost:8080/ContactsApp/app.html#/Contacts/engine
 

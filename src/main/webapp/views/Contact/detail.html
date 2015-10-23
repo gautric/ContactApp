@@ -1,0 +1,59 @@
+<header ng-switch on="$location.path().indexOf('/Contacts/new') > -1">
+    <h3 ng-switch-when="true">Create a new Contact</h3>
+    <h3 ng-switch-when="false">View or edit Contact</h3>
+</header>
+<form id="ContactForm" name="ContactForm" class="form-horizontal" role="form">
+    
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.nom.$invalid}">
+        <label for="nom" class="col-sm-2 control-label">Nom</label>
+        <div id="nomControls" class="col-sm-10">
+            <input id="nom" name="nom" type="text" class="form-control" ng-model="contact.nom" placeholder="Enter the Contact Nom"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.prenom.$invalid}">
+        <label for="prenom" class="col-sm-2 control-label">Prenom</label>
+        <div id="prenomControls" class="col-sm-10">
+            <input id="prenom" name="prenom" type="text" class="form-control" ng-model="contact.prenom" placeholder="Enter the Contact Prenom"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.email.$invalid}">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div id="emailControls" class="col-sm-10">
+            <input id="email" name="email" type="text" class="form-control" ng-model="contact.email" placeholder="Enter the Contact Email"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.ville.$invalid}">
+        <label for="ville" class="col-sm-2 control-label">Ville</label>
+        <div id="villeControls" class="col-sm-10">
+            <input id="ville" name="ville" type="text" class="form-control" ng-model="contact.ville" placeholder="Enter the Contact Ville"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.date.$invalid}">
+        <label for="date" class="col-sm-2 control-label">Date</label>
+        <div id="dateControls" class="col-sm-10">
+            <date id="date" name="date" ng-model="contact.date" placeholder="Enter the Contact Date"></date>
+            <span class="help-block error" ng-show="ContactForm.date.$error.dateFormat">does not match format "yyyy-MM-dd" (e.g. 2013-12-01)</span>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ContactForm.grade.$invalid}">
+        <label for="grade" class="col-sm-2 control-label">Grade</label>
+        <div id="gradeControls" class="col-sm-10">
+            <input id="grade" name="grade" type="text" class="form-control" ng-model="contact.grade" placeholder="Enter the Contact Grade"></input>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveContact" name="saveContact" class="btn btn-primary" ng-disabled="isClean() || ContactForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteContact" name="deleteContact" class="btn btn-danger" ng-show="contact.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>

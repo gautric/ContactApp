@@ -104,7 +104,7 @@ public class ContactService {
 		QueryBuilder qb = ((FullTextEntityManager) em).getSearchFactory()
 				.buildQueryBuilder().forEntity(Contact.class).get();
 
-		Query hql = qb.phrase().onField("prenom").sentence(query).createQuery();
+		Query hql = qb.phrase().onField("nom").sentence(query).createQuery();
 
 		return internalSearch(hql);
 	}
@@ -112,7 +112,7 @@ public class ContactService {
 	public List<Contact> searchLucene(String query) throws Exception {
 		Query luceneQuery=null;
 
-		QueryParser parser = new QueryParser("prenom",
+		QueryParser parser = new QueryParser("nom",
 				((FullTextEntityManager) em).getSearchFactory().getAnalyzer(
 						Contact.class));
 

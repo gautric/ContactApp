@@ -16,7 +16,7 @@ You can deploy the application on WLFY 10CR2
 
 ## Hibernate search engine
 
-Open http://localhost:8080/ContactsApp/app.html#/Contacts/engine
+Open <http://localhost:8080/ContactsApp/app.html#/Contacts/engine>
 
 and enter some query like 
 

@@ -1,3 +1,4 @@
+#!/bin/sh
 
 export CONTACTAPP_REST_URL=${CONTACTAPP_REST_URL:-http://localhost:8080/ContactsApp/rest/contacts}
 

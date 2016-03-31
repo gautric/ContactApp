@@ -24,8 +24,8 @@
 			<property name="hibernate.current_session_context_class"
 				value="managed" />
 			<property name="hibernate.search.default.directory_provider"
-				value="ram" />
-			<!-- <property name="hibernate.search.default.indexBase" value="/tmp/lucene" /> -->
+				value="filesystem" />
+			<property name="hibernate.search.default.indexBase" value="/tmp/lucene" />
 		</properties>
 	</persistence-unit>
 </persistence>
